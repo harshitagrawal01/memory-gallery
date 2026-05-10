@@ -73,7 +73,7 @@ const Home = () => {
   const fetchMemories = async () => {
     setLoading(true);
     try {
-      const res = await axiosInstance.get('/memories');
+      const res = await axiosInstance.get('/api/memories');
       setMemories(res.data.memories);
     } catch (error) {
       toast.error('Failed to fetch memories');
@@ -91,7 +91,7 @@ const Home = () => {
     if (!search.trim()) return fetchMemories();
     setSearching(true);
     try {
-      const res = await axiosInstance.get(`/memories/search?query=${search}`);
+      const res = await axiosInstance.get(`/api/memories/search?query=${search}`);
       setMemories(res.data.memories);
     } catch (error) {
       toast.error('Search failed');
@@ -104,7 +104,7 @@ const Home = () => {
     if (!user) return toast.error('Please login to like!');
     setLikeLoading(memoryId);
     try {
-      const res = await axiosInstance.put(`/memories/${memoryId}/like`);
+      const res = await axiosInstance.put(`/api/memories/${memoryId}/like`);
       setMemories(memories.map(m =>
         m._id === memoryId ? { ...m, likes: res.data.likes } : m
       ));
