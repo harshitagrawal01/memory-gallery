@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://65.2.80.116:5000/api',
+  baseURL: 'https://ricotta-waviness-cauterize.ngrok-free.dev/api',
 });
 
 axiosInstance.interceptors.request.use((config) => {
