@@ -1,7 +1,10 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://ricotta-waviness-cauterize.ngrok-free.dev/api',
+  baseURL: import.meta.env.VITE_API_URL,
+  headers: {
+    'ngrok-skip-browser-warning': 'true'
+  }
 });
 
 axiosInstance.interceptors.request.use((config) => {
