@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+body {
+  background-color: #FAF7F2;
+  color: #2C1810;
+  font-family: 'Inter', sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #FAF7F2 inset !important;
+  -webkit-text-fill-color: #2C1810 !important;
+  caret-color: #2C1810;
+}
+
+.card-shadow {
+  box-shadow: 0 4px 24px rgba(139, 94, 60, 0.08);
+}
